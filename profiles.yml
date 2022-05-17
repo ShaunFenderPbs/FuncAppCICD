@@ -1,0 +1,24 @@
+# This configuration file specifies information about connections to
+# your data warehouse(s). The file contains a series of "profiles."
+# Profiles specify database credentials and connection information
+#
+# By default, dbt looks for this file in ~/.dbt/profiles.yml. That option
+# can be configured when dbt is invoked with the --profiles-dir option:
+#
+#  $ dbt run --profiles-dir /opt/dbt/
+#
+pbs_snowflake_platform:
+    outputs:
+        snowflake_platform:                
+            # specify the snowflake connection
+            type: snowflake
+            threads: 1            
+            account:  "ad52800.west-europe.azure"
+            user:  "ETLUser"
+            password: "FAKEPASSWORD"
+            role:  "DATAENGINEER"
+            database:  "HISTORYJP"
+            warehouse:  "COMPUTE_WH"
+            schema:  "OSWHistory"
+            query_tag: PBS ELT Service account "AHARDCODEDSTRINGORSOMETHING" running dbt commands via Azure Function.
+    target: snowflake_platform

@@ -1,0 +1,4 @@
+{ 
+    "Project": "jp_dummy", 
+    "Command": "dbt debug" 
+}
